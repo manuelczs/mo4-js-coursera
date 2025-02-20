@@ -1,4 +1,10 @@
 /*Name this external file gallery.js*/
+function load() {
+  let imgs = document.getElementsByTagName("img");
+  for(let i=0; i<imgs.length; i++) {
+    imgs[i].tabIndex = i+1;
+  }
+}
 
 function upDate(previewPic) {
   /* In this function you should 
@@ -10,8 +16,10 @@ function upDate(previewPic) {
   */
   let src = previewPic.src;
   let alt = previewPic.alt;
+  let id = previewPic.id;
   document.getElementById("image").style.backgroundImage = "url('" + src + "')";
   document.getElementById("image").innerHTML = alt;
+  document.getElementById(id).tabIndex = parseInt(id);
 }
 
 function unDo(){
